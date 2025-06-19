@@ -10,7 +10,7 @@ import { UserContext } from '../../context/UserContext';
 
 
 // URL de l'API Firebase pour récupérer les articles
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const URL_Domaines_Articles = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getDomainesArticles`;
 const URL_Ajouter_Article_Complet = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/ajouterArticleComplet`;
 const URL_Ajouter_Domaine_article = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/ajouterDomaineArticle`;

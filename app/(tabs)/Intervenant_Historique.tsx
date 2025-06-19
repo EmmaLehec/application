@@ -5,7 +5,7 @@ import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpa
 import { UserContext } from '../../context/UserContext';
 
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const URL_etude = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEtudes`;
 const URL_postuler = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getPostuler`;
 const URL_evenement = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEvents`;

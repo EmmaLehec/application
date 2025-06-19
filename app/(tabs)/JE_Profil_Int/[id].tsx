@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Dimensions, Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const URL_utilisateur = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getUtilisateur`;
 const URL_postuler = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getPostuler`;
 const URL_etude = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEtudes`;
@@ -63,16 +63,18 @@ const Utilisateur = () => {
       .catch(err => setError(err.message));
   }, [refresh]);
 
+  const currentDate = new Date();
+
   // Filtres : études en attente
   const filteredpostuler_attente = postuler.filter(
     (postuler) => postuler.Mail_uti === id && postuler.Statut === 'En attente'
   );
   const filteredEtudes_attente = etudes.filter((etude) =>
-    filteredpostuler_attente.some((post) => post.ID_etude === etude.ID_etude  && new Date(etude.Date_heure_fin_etude) <= currentDate)
+    filteredpostuler_attente.some((post) => post.ID_etude === etude.ID_etude && new Date(etude.Date_heure_fin_etude) >= currentDate)
   );
 
   // Filtres : études réalisées (acceptées et dont la date de fin est passée)
-  const currentDate = new Date();
+
   const filteredpostuler = postuler.filter(
     (postuler) => postuler.Mail_uti === id && postuler.Statut === 'Accepté'
   );

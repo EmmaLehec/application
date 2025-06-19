@@ -9,7 +9,7 @@ import { Alert, Dimensions, Keyboard, KeyboardAvoidingView, Platform, ScrollView
 // ===================== CONSTANTES =====================
 
 // URL de Firebase pour récupérer et mettre à jour les articles
-const IP_LOCAL = '10.15.137.55';  // À remplacer par l'IP locale
+const IP_LOCAL = '10.226.42.55';  // À remplacer par l'IP locale
 const URL_Articles = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getArticles`;
 const URL_Domaines_Articles = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getDomainesArticles`;
 const URL_Faire_Partie = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getFairePartie`;

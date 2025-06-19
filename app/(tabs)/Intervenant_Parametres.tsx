@@ -7,7 +7,7 @@ import { auth } from "../../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const URL_Supprimer_Uti = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/supprimerUtilisateur`;
 
 //Dimensions écran

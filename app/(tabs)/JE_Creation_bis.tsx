@@ -6,7 +6,7 @@ import React, { useContext, useState } from 'react';
 import { Alert, Dimensions, Image, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { UserContext } from '../../context/UserContext';
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const API_KEY_IMGBB = '77e7cd2a2746714d8d3ca005410b4641';
 
 type TypeChamp = {

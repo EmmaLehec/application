@@ -6,7 +6,7 @@ import React, { useContext, useState } from 'react';
 import { Dimensions, Image, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, Platform, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { UserContext } from '../../context/UserContext';
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 
 
 const JE_etude_plus = () => {

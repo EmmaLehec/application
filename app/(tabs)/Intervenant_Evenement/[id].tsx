@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Alert, Dimensions, Image, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { UserContext } from '../../../context/UserContext';
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const URL_evenement = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEvents`;
 const URL_type_evenement = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getType_eve`;
 const URL_admin = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getAdmin`;

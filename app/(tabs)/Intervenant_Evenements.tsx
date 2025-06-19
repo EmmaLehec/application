@@ -7,7 +7,7 @@ import { Dimensions, Platform } from 'react-native';
 import { ImageBackground } from 'react-native';
 
 // URL de l'API Firebase pour récupérer les events
-const IP_LOCAL = '10.15.137.55';  // IP locale
+const IP_LOCAL = '10.226.42.55';  // IP locale
 const URL_getEvent = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEvents`;
 const URL_getTypeEvent = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getType_eve`;
 

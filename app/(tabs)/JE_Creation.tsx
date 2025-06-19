@@ -8,7 +8,7 @@ import { UserContext } from '../../context/UserContext';
 import { auth } from '../../firebaseConfig'; // ou ton chemin exact
 
 
-const IP_LOCAL = '10.15.137.55';
+const IP_LOCAL = '10.226.42.55';
 const URL_UTILISATEUR = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getUtilisateur`;
 
 const PageCreaJE = () => {

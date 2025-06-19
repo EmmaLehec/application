@@ -5,7 +5,7 @@ import { useLocalSearchParams } from 'expo-router';
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // URL de l'API Firebase pour récupérer les études
-const IP_LOCAL = '10.15.137.55';  // IP locale
+const IP_LOCAL = '10.226.42.55';  // IP locale
 const URL = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getEtudes`;
 
 const JE_Etudes = () => {

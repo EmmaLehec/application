@@ -14,7 +14,7 @@ if (!firebase.apps.length) {
 const auth = firebase.auth()
 
 if (__DEV__) {
-  auth.useEmulator("http://10.15.137.55:9099") // your WIFI IP
+  auth.useEmulator("http://10.226.42.55:9099") // your WIFI IP
 }
 
 export {auth}

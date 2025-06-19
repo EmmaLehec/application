@@ -8,7 +8,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { Platform } from 'react-native';
 import { useFocusEffect } from '@react-navigation/native';
 
-const IP_LOCAL = '10.15.137.55';  // Remplace par ton IP locale
+const IP_LOCAL = '10.226.42.55';  // Remplace par ton IP locale
 const API_KEY_IMGBB = '77b5d4ea764ab7a2fe091155ce42ca7b';
 
 type TypeChamp = {
