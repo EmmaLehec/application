@@ -511,7 +511,6 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: 'white',
     padding: screenWidth * 0.02,
-    flexWrap: 'wrap',
   },
 
 
