@@ -295,10 +295,6 @@ const JEEveListe = () => {
               {/* Bouton Voir plus en bas */}
               <TouchableOpacity style={styles.buttonVoirPlus} onPress={() => router.push(`/JE_Evenement/${event.ID_eve}`)}>
                 <Text style={styles.texttitre}>{event.Titre_eve}</Text>
-                <View style={styles.voirplus}>
-                  <Text style={styles.buttonText}>Voir plus</Text>
-                  <AntDesign name="arrowright" size={18} color="#fff" style={{ marginLeft: 4 }} />
-                </View>
               </TouchableOpacity>
             </ImageBackground>
           ))}
@@ -363,10 +359,6 @@ const JEEveListe = () => {
                   {/* Bouton Voir plus en bas */}
                   <TouchableOpacity style={styles.buttonVoirPlus} onPress={() => router.push(`/JE_Evenement/${event.ID_eve}`)}>
                     <Text style={styles.texttitre}>{event.Titre_eve}</Text>
-                    <View style={styles.voirplus}>
-                      <Text style={styles.buttonText}>Voir plus</Text>
-                      <AntDesign name="arrowright" size={18} color="#fff" style={{ marginLeft: 4 }} />
-                    </View>
                   </TouchableOpacity>
                 </ImageBackground>
               ))
