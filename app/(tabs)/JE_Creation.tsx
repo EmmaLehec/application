@@ -17,85 +17,86 @@ const PageCreaJE = () => {
   const [confirmMDP, setConfirmMDP] = useState<string>('');
   const [MDPVisible, setMDPVisible] = useState<boolean>(false);
   const [confirmVisible, setConfirmVisible] = useState<boolean>(false);
-  const router=useRouter();
+  const router = useRouter();
   const context = useContext(UserContext);
   if (!context) throw new Error("UserContext must be used within a UserProvider");
 
-  
-      useFocusEffect(
-        React.useCallback(() => {
-          // Réinitialise tous les champs quand la page est affichée
-          setEmail('');
-          setMotDePasse('');
-          setMDPVisible(false);
-          setConfirmMDP('');
-          setConfirmVisible(false);
-        }, [])
-      );
-  
 
-const { setMailCreation, setMdpCreation } = context;
+  useFocusEffect(
+    React.useCallback(() => {
+      // Réinitialise tous les champs quand la page est affichée
+      setEmail('');
+      setMotDePasse('');
+      setMDPVisible(false);
+      setConfirmMDP('');
+      setConfirmVisible(false);
+    }, [])
+  );
 
-const handlecontinuer = async () => {
-  if (!email || !motDePasse || !confirmMDP) {
-    alert('Merci de remplir tous les champs.');
-    return;
-  }
 
-  if (!email.includes('@')) {
-    alert("L'adresse e-mail n'est pas valide.");
-    return;
-  }
+  const { setMailCreation, setMdpCreation } = context;
 
-  if (motDePasse.length<6) {
-    alert('Veuillez rentrer un mot de passe supérieur à 6 caractères');
-    return;
-  }
-  
-  if (motDePasse !== confirmMDP) {
-    alert('Les mots de passe ne correspondent pas.');
-    return;
-  }
-
-  try {
-    const res = await fetch(URL_UTILISATEUR);
-    if (!res.ok) throw new Error('Erreur réseau');
-    const data = await res.json();
-
-    const emailExiste = data.utilisateur.some(
-      (u: any) => u.Mail_uti.toLowerCase() === email.toLowerCase()
-    );
-
-    if (emailExiste) {
-      alert('Cet email est déjà utilisé.');
+  const handlecontinuer = async () => {
+    if (!email || !motDePasse || !confirmMDP) {
+      alert('Merci de remplir tous les champs.');
       return;
     }
-  } catch (err) {
-    console.error(err);
-    alert('Impossible de vérifier l’email, réessaie plus tard.');
-    return;
-  }
 
-  try {
+    if (!email.includes('@')) {
+      alert("L'adresse e-mail n'est pas valide.");
+      return;
+    }
 
-    await createUserWithEmailAndPassword(auth, email, motDePasse);
-  } catch (error: any) {
-    console.error('Erreur création Firebase Auth:', error);
-    alert(`Erreur lors de la création du compte : ${error.message}`);
-    return;
-  }
+    if (motDePasse.length < 6) {
+      alert('Veuillez rentrer un mot de passe supérieur à 6 caractères');
+      return;
+    }
 
-  // Passage des infos dans le contexte
-  setMailCreation(email);
-  setMdpCreation(motDePasse);
+    if (motDePasse !== confirmMDP) {
+      alert('Les mots de passe ne correspondent pas.');
+      return;
+    }
 
-  router.push('/JE_Creation_bis');
-};
+    try {
+      const res = await fetch(URL_UTILISATEUR);
+      if (!res.ok) throw new Error('Erreur réseau');
+      const data = await res.json();
+
+      const emailExiste = data.utilisateur.some(
+        (u: any) => u.Mail_uti.toLowerCase() === email.toLowerCase()
+      );
+
+      if (emailExiste) {
+        alert('Cet email est déjà utilisé.');
+        return;
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Impossible de vérifier l’email, réessaie plus tard.');
+      return;
+    }
+
+    try {
+
+      await createUserWithEmailAndPassword(auth, email, motDePasse);
+    } catch (error: any) {
+      console.error('Erreur création Firebase Auth:', error);
+      alert(`Erreur lors de la création du compte : ${error.message}`);
+      return;
+    }
+
+    // Passage des infos dans le contexte
+    setMailCreation(email);
+    setMdpCreation(motDePasse);
+
+    router.push('/JE_Creation_bis');
+  };
 
 
   return (
     <View style={{ flex: 1 }}>
-      <View style={styles.Bar_du_haut}></View>
+      {/* Barre supérieure */}
+      <View style={styles.topBar} />
       <ScrollView contentContainerStyle={styles.conteneur}>
         <View style={styles.cercle}>
           <Text style={styles.je}>JE</Text>
@@ -139,22 +140,20 @@ const handlecontinuer = async () => {
         </View>
 
         <TouchableOpacity style={styles.bouton}
-        onPress={handlecontinuer}>     
+          onPress={handlecontinuer}>
           <Text style={styles.texteBouton}>Continuer</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
-        onPress={() => 
-        {router.push('/JE_Connexion');}}>
+          onPress={() => { router.push('/JE_Connexion'); }}>
           <Text style={styles.lien}>Connexion à un compte existant</Text>
         </TouchableOpacity>
       </ScrollView>
 
       <View style={styles.bottomBar}>
         <TouchableOpacity
-        onPress={() => 
-        {router.push('/');}}>
-          <FontAwesome name="user" size={28} color="black" style={styles.icon}  />
+          onPress={() => { router.push('/'); }}>
+          <FontAwesome name="user" size={28} color="black" style={styles.icon} />
         </TouchableOpacity>
       </View>
     </View>
@@ -166,21 +165,26 @@ const { width, height } = Dimensions.get('window');
 
 
 const styles = StyleSheet.create({
-   conteneur: {
+  conteneur: {
     flexGrow: 1,
     backgroundColor: '#D2E3ED',
     alignItems: 'center',
     padding: 20,
     paddingBottom: 100, // espace pour la bottomBar
   },
-    Bar_du_haut: {
+  //Barre du haut
+  topBar: {
     top: 0,
     left: 0,
     right: 0,
-    height: height * 0.06,
-    backgroundColor: 'white',
+    height: 60,
+    backgroundColor: 'black',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-      icon: {
+  icon: {
     marginTop: height * 0.015,
   },
 
@@ -197,7 +201,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
   },
   je: {
     fontSize: 24,
@@ -268,9 +271,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-    alignItems:'center',
-   
+    alignItems: 'center',
+
   },
 });
 
-export default PageCreaJE ;
+export default PageCreaJE;

@@ -9,7 +9,7 @@ import { auth } from "../../firebaseConfig";
 
 // URL de l'API Firebase pour récupérer les études
 const IP_LOCAL = '10.15.137.55';  // IP locale
-const URL = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getAdmin`; 
+const URL = `http://${IP_LOCAL}:5001/application-5c3f8/us-central1/getAdmin`;
 
 
 
@@ -20,137 +20,140 @@ const JeConnexion = () => {
   const [MDPVisible, setMDPVisible] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null); // Pour gérer les erreurs
 
-  const router=useRouter();
+  const router = useRouter();
   const { refresh } = useLocalSearchParams();
-      useFocusEffect(
-        React.useCallback(() => {
-          // Réinitialise tous les champs quand la page est affichée
-          setEmail('');
-          setMotDePasse('');
-          setMDPVisible(false);
-          
-        }, [])
-      );
-      
-      
-         useEffect(() => {
-           fetch(URL)
-             .then(response => {
-               if (!response.ok) throw new Error('Erreur lors de la récupération des domaines');
-               return response.json();
-             })
-             .then(data => {
-               setEmailbdd(data.admin); // Stockage des études dans le state venant de data SQL 
-             })
-             .catch(err => {
-               console.error(err);
-               setError('Impossible de charger les domaines');
-             });
-         }, []);
+  useFocusEffect(
+    React.useCallback(() => {
+      // Réinitialise tous les champs quand la page est affichée
+      setEmail('');
+      setMotDePasse('');
+      setMDPVisible(false);
+
+    }, [])
+  );
+
+
+  useEffect(() => {
+    fetch(URL)
+      .then(response => {
+        if (!response.ok) throw new Error('Erreur lors de la récupération des domaines');
+        return response.json();
+      })
+      .then(data => {
+        setEmailbdd(data.admin); // Stockage des études dans le state venant de data SQL 
+      })
+      .catch(err => {
+        console.error(err);
+        setError('Impossible de charger les domaines');
+      });
+  }, []);
 
   const context = useContext(UserContext);
   if (!context) throw new Error("Connexion doit être utilisé dans un UserProvider");
-  const {setUserMail} = context;
+  const { setUserMail } = context;
 
 
 
   const handleLogin = async () => {
-  const cleanedEmail = (email || '').trim().toLowerCase();
-  const cleanedMDP = (motDePasse || '').trim();
+    const cleanedEmail = (email || '').trim().toLowerCase();
+    const cleanedMDP = (motDePasse || '').trim();
 
-  if (!cleanedEmail.includes("@")) {
-    alert("Veuillez entrer un email valide.");
-    return;
-  }
-
-  if (cleanedMDP === '') {
-    alert("Veuillez entrer un mot de passe.");
-    return;
-  }
-
-
-  const foundAdm = emailbdd.find((adm: any) => adm.mail_admin?.toLowerCase() === cleanedEmail);
-
-  if (!foundAdm) {
-    alert("Ce compte a été supprimé.");
-    router.replace('/'); // Redirige vers page d'accueil
-    return;
-  }
-
-  try {
-
-    const userCredential = await signInWithEmailAndPassword(auth, cleanedEmail, cleanedMDP);
-    const token = await userCredential.user.getIdToken();
-
-    console.log("Token JWT Firebase :", token);
-    setUserMail(cleanedEmail);
-    router.push('/JE_Accueil');
-  } catch (error: any) {
-    if (error.code === 'auth/user-not-found') {
-      alert("Aucun compte trouvé avec cet email.");
-    } else if (error.code === 'auth/wrong-password') {
-      alert("Mot de passe incorrect.");
-    } else {
-      alert("Erreur de connexion : " + error.message);
+    if (!cleanedEmail.includes("@")) {
+      alert("Veuillez entrer un email valide.");
+      return;
     }
-  }
-};
+
+    if (cleanedMDP === '') {
+      alert("Veuillez entrer un mot de passe.");
+      return;
+    }
+
+
+    const foundAdm = emailbdd.find((adm: any) => adm.mail_admin?.toLowerCase() === cleanedEmail);
+
+    if (!foundAdm) {
+      alert("Ce compte a été supprimé.");
+      router.replace('/'); // Redirige vers page d'accueil
+      return;
+    }
+
+    try {
+
+      const userCredential = await signInWithEmailAndPassword(auth, cleanedEmail, cleanedMDP);
+      const token = await userCredential.user.getIdToken();
+
+      console.log("Token JWT Firebase :", token);
+      setUserMail(cleanedEmail);
+      router.push('/JE_Accueil');
+    } catch (error: any) {
+      if (error.code === 'auth/user-not-found') {
+        alert("Aucun compte trouvé avec cet email.");
+      } else if (error.code === 'auth/wrong-password') {
+        alert("Mot de passe incorrect.");
+      } else {
+        alert("Erreur de connexion : " + error.message);
+      }
+    }
+  };
 
 
 
   return (
-       <View style={{ flex: 1 }}>
-              <View style={styles.Bar_du_haut}></View>
-    <View style={styles.conteneur}>
-      <View style={styles.cercle}>
-        <Text style={styles.je}>JE</Text>
-      </View>
+    <View style={{ flex: 1 }}>
+      {/* Barre supérieure */}
+      <View style={styles.topBar} />
+      <View style={styles.conteneur}>
+        <View style={styles.cercle}>
+          <Text style={styles.je}>JE</Text>
+        </View>
 
-      <Text style={styles.titre}>Connexion à un compte existant</Text>
+        <Text style={styles.titre}>Connexion à un compte existant</Text>
 
-      <Text style={styles.label}>Email</Text>
-      <TextInput
-        style={styles.caseTexte}
-        placeholder="username@example.fr"
-        placeholderTextColor="#555"
-        value={email}
-        onChangeText={setEmail}
-      />
-
-      <Text style={styles.label}>Mot de passe</Text>
-      <View style={styles.caseMDP}>
+        <Text style={styles.label}>Email</Text>
         <TextInput
-          style={styles.zoneTexte}
-          secureTextEntry={!MDPVisible}
-          value={motDePasse}
-          onChangeText={setMotDePasse}
+          style={styles.caseTexte}
+          placeholder="username@example.fr"
+          placeholderTextColor="#555"
+          value={email}
+          onChangeText={setEmail}
         />
-        <TouchableOpacity onPress={() => setMDPVisible(!MDPVisible)}>
-          <Ionicons name={MDPVisible ? 'eye' : 'eye-off'} size={20} />
+
+        <Text style={styles.label}>Mot de passe</Text>
+        <View style={styles.caseMDP}>
+          <TextInput
+            style={styles.zoneTexte}
+            secureTextEntry={!MDPVisible}
+            value={motDePasse}
+            onChangeText={setMotDePasse}
+          />
+          <TouchableOpacity onPress={() => setMDPVisible(!MDPVisible)}>
+            <Ionicons name={MDPVisible ? 'eye' : 'eye-off'} size={20} />
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity style={styles.bouton} onPress={handleLogin}>
+          <Text style={styles.texteBouton}>Continuer</Text>
         </TouchableOpacity>
-      </View>
 
-      <TouchableOpacity style={styles.bouton} onPress={handleLogin}>     
-        <Text style={styles.texteBouton}>Continuer</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => 
-        {router.push('/JE_Creation');
-        console.log('Creaction')}}>
-        <Text style={styles.lien}>Création d’un compte</Text>
-      </TouchableOpacity>
-
-      <View style={styles.bottomBar}>
-        <TouchableOpacity
-        onPress={() => 
-        {router.push('/');
-        console.log('Accueil_principal')}}>
-          <FontAwesome name="user" size={28} color="black"  style={styles.icon}  />
+        <TouchableOpacity onPress={() => {
+          router.push('/JE_Creation');
+          console.log('Creaction')
+        }}>
+          <Text style={styles.lien}>Création d’un compte</Text>
         </TouchableOpacity>
+
+        <View style={styles.bottomBar}>
+          <TouchableOpacity
+            onPress={() => {
+              router.push('/');
+              console.log('Accueil_principal')
+            }}>
+            <FontAwesome name="user" size={28} color="black" style={styles.icon} />
+          </TouchableOpacity>
+        </View>
+
       </View>
-      
     </View>
-       </View>
 
   );
 };
@@ -165,14 +168,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
-      Bar_du_haut: {
+  //Barre du haut
+  topBar: {
     top: 0,
     left: 0,
     right: 0,
-    height: height * 0.06,
-    backgroundColor: 'white',
+    height: 60,
+    backgroundColor: 'black',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-    icon: {
+
+  icon: {
     marginTop: height * 0.015,
   },
   cercle: {
@@ -187,7 +196,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
   },
   je: {
     fontSize: 24,
@@ -253,7 +261,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   bottomBar: {
-   position: 'absolute',
+    position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,
@@ -261,7 +269,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-    alignItems:'center',
+    alignItems: 'center',
   },
 });
 
