@@ -1,0 +1,139 @@
+[debug] [2025-06-19T13:27:15.153Z] ----------------------------------------------------------------------
+[debug] [2025-06-19T13:27:15.155Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Emmic\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --import=./emulator-data --export-on-exit=./emulator-data
+[debug] [2025-06-19T13:27:15.156Z] CLI Version:   14.6.0
+[debug] [2025-06-19T13:27:15.156Z] Platform:      win32
+[debug] [2025-06-19T13:27:15.156Z] Node Version:  v22.16.0
+[debug] [2025-06-19T13:27:15.156Z] Time:          Thu Jun 19 2025 15:27:15 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2025-06-19T13:27:15.156Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-19T13:27:15.317Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-19T13:27:15.318Z] > authorizing via signed-in user (emmichka.l@gmail.com)
+[info] i  emulators: Starting emulators: auth, functions, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, extensions"}}
+[debug] [2025-06-19T13:27:15.322Z] Checked if tokens are valid: false, expires at: 1750334686936
+[debug] [2025-06-19T13:27:15.322Z] Checked if tokens are valid: false, expires at: 1750334686936
+[debug] [2025-06-19T13:27:15.322Z] > refreshing access token with scopes: []
+[debug] [2025-06-19T13:27:15.323Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-06-19T13:27:15.323Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T13:27:15.626Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-06-19T13:27:15.626Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-06-19T13:27:15.631Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/application-5c3f8/services/cloudresourcemanager.googleapis.com [none]
+[debug] [2025-06-19T13:27:15.632Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/application-5c3f8/services/cloudresourcemanager.googleapis.com x-goog-quota-user=projects/application-5c3f8
+[debug] [2025-06-19T13:27:16.591Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/application-5c3f8/services/cloudresourcemanager.googleapis.com 200
+[debug] [2025-06-19T13:27:16.591Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/application-5c3f8/services/cloudresourcemanager.googleapis.com [omitted]
+[debug] [2025-06-19T13:27:16.592Z] Checked if tokens are valid: true, expires at: 1750343234626
+[debug] [2025-06-19T13:27:16.592Z] Checked if tokens are valid: true, expires at: 1750343234626
+[debug] [2025-06-19T13:27:16.592Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/application-5c3f8 [none]
+[debug] [2025-06-19T13:27:17.386Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/application-5c3f8 200
+[debug] [2025-06-19T13:27:17.386Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/application-5c3f8 {"projectNumber":"565678178903","projectId":"application-5c3f8","lifecycleState":"ACTIVE","name":"Application","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2025-06-06T10:59:55.525314Z"}
+[debug] [2025-06-19T13:27:17.394Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-06-19T13:27:17.394Z] assigned listening specs for emulators {"user":{"ui":[{"address":"0.0.0.0","family":"IPv4","port":4000}],"auth":[{"address":"0.0.0.0","family":"IPv4","port":9099}],"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-06-19T13:27:17.397Z] [hub] writing locator at C:\Users\Emmic\AppData\Local\Temp\hub-application-5c3f8.json
+[debug] [2025-06-19T13:27:17.401Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2025-06-19T13:27:17.404Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-06-19T13:27:17.404Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-06-19T13:27:17.404Z] late-assigned ports for functions and eventarc emulators {"user":{"ui":[{"address":"0.0.0.0","family":"IPv4","port":4000}],"auth":[{"address":"0.0.0.0","family":"IPv4","port":9099}],"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"functions":[{"address":"0.0.0.0","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, firestore, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, firestore, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-06-19T13:27:17.443Z] defaultcredentials: writing to file C:\Users\Emmic\AppData\Roaming\firebase\emmichka_l_gmail.com_application_default_credentials.json
+[debug] [2025-06-19T13:27:17.445Z] Setting GAC to C:\Users\Emmic\AppData\Roaming\firebase\emmichka_l_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Emmic\\AppData\\Roaming\\firebase\\emmichka_l_gmail.com_application_default_credentials.json"}}
+[debug] [2025-06-19T13:27:17.446Z] Checked if tokens are valid: true, expires at: 1750343234626
+[debug] [2025-06-19T13:27:17.446Z] Checked if tokens are valid: true, expires at: 1750343234626
+[debug] [2025-06-19T13:27:17.446Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/application-5c3f8/adminSdkConfig [none]
+[debug] [2025-06-19T13:27:17.823Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/application-5c3f8/adminSdkConfig 200
+[debug] [2025-06-19T13:27:17.823Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/application-5c3f8/adminSdkConfig {"projectId":"application-5c3f8","storageBucket":"application-5c3f8.firebasestorage.app"}
+[info] i  auth: Importing config from C:\TRAVAIL\3A\S2\Application_intervenant\Node_projet\Application\emulator-data\auth_export\config.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing config from C:\\TRAVAIL\\3A\\S2\\Application_intervenant\\Node_projet\\Application\\emulator-data\\auth_export\\config.json"}}
+[info] i  auth: Importing accounts from C:\TRAVAIL\3A\S2\Application_intervenant\Node_projet\Application\emulator-data\auth_export\accounts.json {"metadata":{"emulator":{"name":"auth"},"message":"Importing accounts from C:\\TRAVAIL\\3A\\S2\\Application_intervenant\\Node_projet\\Application\\emulator-data\\auth_export\\accounts.json"}}
+[debug] [2025-06-19T13:27:22.503Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "C:\TRAVAIL\3A\S2\Application_intervenant\Node_projet\Application\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\TRAVAIL\\3A\\S2\\Application_intervenant\\Node_projet\\Application\\functions\" for Cloud Functions..."}}
+[debug] [2025-06-19T13:27:22.510Z] Validating nodejs source
+[debug] [2025-06-19T13:27:23.338Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.1.0",
+    "typescript": "^5.7.3"
+  },
+  "private": true
+}
+[debug] [2025-06-19T13:27:23.339Z] Building nodejs source
+[debug] [2025-06-19T13:27:23.339Z] Failed to find version of module node: reached end of search path C:\TRAVAIL\3A\S2\Application_intervenant\Node_projet\Application\functions\node_modules
+[info] +  functions: Using node@22 from host. 
+[info] i  functions: Loaded environment variables from .env. 
+[debug] [2025-06-19T13:27:23.342Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-06-19T13:27:23.347Z] Found firebase-functions binary at 'C:\TRAVAIL\3A\S2\Application_intervenant\Node_projet\Application\functions\node_modules\.bin\firebase-functions'
+[info] Serving at port 8527
+
+[debug] [2025-06-19T13:27:23.895Z] Got response from /__/functions.yaml {"endpoints":{"getUtilisateur":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getUtilisateur"},"getAdmin":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getAdmin"},"updateStatutPostuler":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateStatutPostuler"},"getEvents":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getEvents"},"getInscrire":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getInscrire"},"getType_eve":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getType_eve"},"ajouterEvenement":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterEvenement"},"ajouterInscription":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterInscription"},"getDomainesArticles":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getDomainesArticles"},"getFairePartie":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getFairePartie"},"getArticles":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getArticles"},"getEtudes":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getEtudes"},"getPostuler":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"getPostuler"},"get1Admin":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"get1Admin"},"get1Uti":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"get1Uti"},"updateAdmin":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateAdmin"},"updateUti":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateUti"},"ajouterArticleComplet":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterArticleComplet"},"ajouterDomaineArticle":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterDomaineArticle"},"ajouterEtude":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterEtude"},"ajouterPostuler":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterPostuler"},"ajouterAdmin":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterAdmin"},"updateArticle":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"updateArticle"},"ajouterUtilisateur":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"ajouterUtilisateur"},"supprimerUtilisateur":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"supprimerUtilisateur"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-06-19T13:27:27.950Z] defaultcredentials: writing to file C:\Users\Emmic\AppData\Roaming\firebase\emmichka_l_gmail.com_application_default_credentials.json
+[debug] [2025-06-19T13:27:27.951Z] Setting GAC to C:\Users\Emmic\AppData\Roaming\firebase\emmichka_l_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Emmic\\AppData\\Roaming\\firebase\\emmichka_l_gmail.com_application_default_credentials.json"}}
+[info] +  functions: Loaded functions definitions from source: getUtilisateur, getAdmin, updateStatutPostuler, getEvents, getInscrire, getType_eve, ajouterEvenement, ajouterInscription, getDomainesArticles, getFairePartie, getArticles, getEtudes, getPostuler, get1Admin, get1Uti, updateAdmin, updateUti, ajouterArticleComplet, ajouterDomaineArticle, ajouterEtude, ajouterPostuler, ajouterAdmin, updateArticle, ajouterUtilisateur, supprimerUtilisateur. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: getUtilisateur, getAdmin, updateStatutPostuler, getEvents, getInscrire, getType_eve, ajouterEvenement, ajouterInscription, getDomainesArticles, getFairePartie, getArticles, getEtudes, getPostuler, get1Admin, get1Uti, updateAdmin, updateUti, ajouterArticleComplet, ajouterDomaineArticle, ajouterEtude, ajouterPostuler, ajouterAdmin, updateArticle, ajouterUtilisateur, supprimerUtilisateur."}}
+[info] +  functions[us-central1-getUtilisateur]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getUtilisateur). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getUtilisateur)."}}
+[info] +  functions[us-central1-getAdmin]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getAdmin). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getAdmin)."}}
+[info] +  functions[us-central1-updateStatutPostuler]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateStatutPostuler). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateStatutPostuler)."}}
+[info] +  functions[us-central1-getEvents]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getEvents). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getEvents)."}}
+[info] +  functions[us-central1-getInscrire]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getInscrire). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getInscrire)."}}
+[info] +  functions[us-central1-getType_eve]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getType_eve). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getType_eve)."}}
+[info] +  functions[us-central1-ajouterEvenement]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterEvenement). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterEvenement)."}}
+[info] +  functions[us-central1-ajouterInscription]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterInscription). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterInscription)."}}
+[info] +  functions[us-central1-getDomainesArticles]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getDomainesArticles). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getDomainesArticles)."}}
+[info] +  functions[us-central1-getFairePartie]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getFairePartie). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getFairePartie)."}}
+[info] +  functions[us-central1-getArticles]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getArticles). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getArticles)."}}
+[info] +  functions[us-central1-getEtudes]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getEtudes). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getEtudes)."}}
+[info] +  functions[us-central1-getPostuler]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getPostuler). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/getPostuler)."}}
+[info] +  functions[us-central1-get1Admin]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/get1Admin). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/get1Admin)."}}
+[info] +  functions[us-central1-get1Uti]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/get1Uti). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/get1Uti)."}}
+[info] +  functions[us-central1-updateAdmin]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateAdmin). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateAdmin)."}}
+[info] +  functions[us-central1-updateUti]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateUti). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateUti)."}}
+[info] +  functions[us-central1-ajouterArticleComplet]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterArticleComplet). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterArticleComplet)."}}
+[info] +  functions[us-central1-ajouterDomaineArticle]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterDomaineArticle). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterDomaineArticle)."}}
+[info] +  functions[us-central1-ajouterEtude]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterEtude). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterEtude)."}}
+[info] +  functions[us-central1-ajouterPostuler]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterPostuler). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterPostuler)."}}
+[info] +  functions[us-central1-ajouterAdmin]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterAdmin). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterAdmin)."}}
+[info] +  functions[us-central1-updateArticle]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateArticle). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/updateArticle)."}}
+[info] +  functions[us-central1-ajouterUtilisateur]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterUtilisateur). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/ajouterUtilisateur)."}}
+[info] +  functions[us-central1-supprimerUtilisateur]: http function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/supprimerUtilisateur). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/application-5c3f8/us-central1/supprimerUtilisateur)."}}
+[debug] [2025-06-19T13:27:27.968Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬──────────────┬──────────────────────────────────┐
+│ Emulator       │ Host:Port    │ View in Emulator UI              │
+├────────────────┼──────────────┼──────────────────────────────────┤
+│ Authentication │ 0.0.0.0:9099 │ http://127.0.0.1:4000/auth       │
+├────────────────┼──────────────┼──────────────────────────────────┤
+│ Functions      │ 0.0.0.0:5001 │ http://127.0.0.1:4000/functions  │
+├────────────────┼──────────────┼──────────────────────────────────┤
+│ Extensions     │ 0.0.0.0:5001 │ http://127.0.0.1:4000/extensions │
+└────────────────┴──────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

@@ -124,7 +124,8 @@ const JEProfil = () => {
   return (
 
     <View style={styles.container}>
-      <View style={styles.Bar_du_haut}></View>
+      {/* Barre supérieure */}
+      <View style={styles.topBar} />
       <View style={styles.titreWrapper}>
 
         <TouchableOpacity onPress={() => router.push('/JE_Creation')} style={styles.backButton}>
@@ -201,12 +202,17 @@ const styles = StyleSheet.create({
     position: 'relative',
     backgroundColor: '#D2E3ED',
   },
-  Bar_du_haut: {
+  //Barre du haut
+  topBar: {
     top: 0,
     left: 0,
     right: 0,
-    height: height * 0.06,
-    backgroundColor: 'white',
+    height: 60,
+    backgroundColor: 'black',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   label: {
     alignSelf: 'flex-start',
